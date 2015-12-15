@@ -1,0 +1,56 @@
+<meta charset="utf-8">
+<script>
+
+//var num=Math.floor(Math.random() * (max - min + 1)) + min;
+var aim,z1min,z1max,z2max,z3max,z4max,killcount=0,shootcount=0;
+var z1alive=true,z2alive=true,z3alive=true,z4alive=true;
+z1min=parseInt(Math.floor((Math.random() * 21) - 90));
+z1max=parseInt(z1min+30);
+z2max=parseInt(z1max+30);
+z3max=parseInt(z2max+30);
+z4max=parseInt(z3max+30);
+
+alert('Get a gun, shoot at random.\n\nВы слепо-глухо-немая сова с дробовиком, перед вами 4 зомби-енота, у вас 6 патронов.\nДля выстрела введите угол от -90 до 90');
+
+for (shootcount; shootcount<6; shootcount++)
+{
+	aim=prompt('Направление выстрела - ');
+	if ( (aim > z1min) && (aim < z1max) )
+	{
+		if (z1alive)
+		{
+			killcount++;
+			z1alive=false;
+			alert ('Зомби-енот убит. Осталось '+((killcount-4)*(-1))+' зомби-енота');
+		} else {alert ('Промах');}
+	} else if ( (aim > z1max) && (aim < z2max) )
+	{
+		if (z2alive)
+		{
+			killcount++;
+			z2alive=false;
+			alert ('Зомби-енот убит. Осталось '+((killcount-4)*(-1))+' зомби-енота');
+		} else {alert ('Промах');}
+	} else if ( (aim > z2max) && (aim < z3max) )
+	{
+		if (z3alive)
+		{
+			killcount++;
+			z3alive=false;
+			alert ('Зомби-енот убит. Осталось '+((killcount-4)*(-1))+' зомби-енота');
+		} else {alert ('Промах');}
+	} else if ( (aim > z3max) && (aim < z4max) )
+	{
+		if (z4alive)
+		{
+			killcount++;
+			z4alive=false;
+			alert ('Зомби-енот убит. Осталось '+((killcount-4)*(-1))+' зомби-енота');
+		} else {alert ('Промах');}
+	} else {alert ('промах');}
+}
+if ( killcount==4 )
+{
+	alert('Вы выжили, хотя это не на долго...');
+} else {alert('Вас сожрали зомби-еноты');}
+</script>
